@@ -42,37 +42,35 @@ def index_my():
     for node in node_my:
         index_my = node.get_name()
         if index_my.isdigit():
-            print(index_my)
-            return index_my
+            print("我的排名是："+ str(int(index_my) - 1))
+            return int(index_my) - 1
 # =========================获取我的排名=========================
 
 
 list_friend = poco("J_rank_list").children()
-index = 45
+index = 8
 index_my = index_my()
 height_item = height_item(list_friend)
 
 while True:
-    if index < 4:
-        if index == index_my:
-            index += 1
-            continue
+    if index == index_my:
+        index += 1
+        continue
+    if index < 3:
         list_friend[index].click()
         steal()
         index += 1
     else:
-        if index == index_my:
-            index += 1
-            continue
+        temp = poco(str(index+2))
         friend = poco(str(index+1))
-        if friend.exists():
-            poco(str(index)).click()
+        if temp.exists():
+            friend.click()
             steal()
             index += 1
         else:
             if poco("J_rank_list_more").exists():
                 break
-            poco.swipe([0.5,0.8],[0.5,0.8-height_item*5])
+            friend.swipe([0.5,0.8-height_item*5])
         
 
     

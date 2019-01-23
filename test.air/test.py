@@ -12,12 +12,18 @@ index = 1
 screen_size = poco.get_screen_size()
 print(screen_size)
 
+# touch(Template(r"tpl1548212565602.png", record_pos=(0.476, -0.769), resolution=(1080, 2220)))
+
+
 #[1080, 2220]
 
 while index<10 :
     poco.swipe([0.5,0.8], [0.5,0.6])
     index += 1
         
+        
+        
+
 
 
 # poco("android:id/content").offspring("com.alipay.mobile.nebula:id/h5_fragment").offspring("J_rank_list").child("android.view.View")[2]
